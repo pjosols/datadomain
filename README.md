@@ -3,16 +3,16 @@ datadomain.py
 A Python module for interacting with the DataDomain backup appliance. It uses the DataDomain REST API where possible 
 and reverts to sending commands via SSH where necessary.
 
-#### Features 
+# Features 
 - Create or delete an mtree
 - Create or delete an NFS export
 - Create or delete a VLAN interface
 - Establish mtree replication
 
 
-#### Examples
+# Examples
 
-##### Get started
+## Get started
 ```
 from datadomain import DataDomain
 from secrets import password
@@ -27,7 +27,7 @@ dd.login("corp\\pauljolsen", password)
 dd.logout()
 ```
 
-##### Work with Mtrees
+### Work with Mtrees
 ```
 # Create Mtree
 dd.create_mtree("pjo-test-22")
@@ -42,7 +42,7 @@ dd.get_mtree("pjo-test-22")
 dd.delete_mtree('pjo-test-22')
 ```
 
-##### Work with VLAN interfaces
+### Work with VLAN interfaces
 ```
 # Create VLAN Interface
 dd.create_interface("10.0.1.125", "255.255.255.0", physical_int="veth2")
@@ -57,7 +57,7 @@ dd.get_interface("veth2.10")
 dd.delete_interface("veth2.10")
 ```
 
-##### Work with NFS exports
+### Work with NFS exports
 ```
 # Create NFS Export
 dd.create_export(
@@ -79,7 +79,7 @@ dd.get_export("pjo-test-22")
 dd.delete_export("pjo-test-22")
 ```
 
-##### Establish Mtree replication
+### Establish Mtree replication
 Note that it is assumed the same credentials used on the source also work on the destination.
 ```
 dd.replicate_mtree(mtree="pjo-test-26", destination="londd01.mydomain.com") 
