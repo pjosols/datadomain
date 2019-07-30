@@ -1,7 +1,7 @@
 datadomain.py
 =======
-A Python module for interacting with the DataDomain backup appliance. It uses the DataDomain REST API where possible, 
-reverts to sending commands via SSH where necessary.
+A Python module for interacting with the DataDomain backup appliance. It uses the DataDomain REST API where possible 
+and reverts to sending commands via SSH where necessary.
 
 #### Features 
 - Create or delete an mtree
