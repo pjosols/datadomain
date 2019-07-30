@@ -17,6 +17,9 @@ Features
 
 Get started
 -----------
+::
+
+    pip install git+https://github.com/pauljolsen/datadomain
 
 ::
 
@@ -98,4 +101,4 @@ work on the destination.
 
 ::
 
-   dd.replicate_mtree(mtree="pjo-test-26", destination="londd01.mydomain.com") 
+   dd.replicate_mtree(mtree="pjo-test-26", destination="londd01.mydomain.com")
