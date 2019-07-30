@@ -7,7 +7,7 @@ and reverts to sending commands via SSH where necessary.
 - Create or delete an mtree
 - Create or delete an NFS export
 - Create or delete a VLAN interface
-- Establish mtree replication
+- Establish MTree replication
 
 
 
@@ -26,18 +26,18 @@ dd.login("corp\\pauljolsen", password)
 dd.logout()
 ```
 
-### Work with Mtrees
+### Work with MTrees
 ```
-# Create Mtree
+# Create MTree
 dd.create_mtree("pjo-test-22")
 
-# Get All Mtrees
+# Get All MTrees
 dd.get_mtree()
 
-# Get specific Mtree
+# Get specific MTree
 dd.get_mtree("pjo-test-22")
 
-# Delete Mtree
+# Delete MTree
 dd.delete_mtree('pjo-test-22')
 ```
 
@@ -78,7 +78,7 @@ dd.get_export("pjo-test-22")
 dd.delete_export("pjo-test-22")
 ```
 
-### Establish Mtree replication
+### Establish MTree replication
 Note that it is assumed the same credentials used on the source also work on the destination.
 ```
 dd.replicate_mtree(mtree="pjo-test-26", destination="londd01.mydomain.com") 
