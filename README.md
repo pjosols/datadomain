@@ -3,14 +3,13 @@ datadomain.py
 A Python module for interacting with the DataDomain backup appliance. It uses the DataDomain REST API where possible 
 and reverts to sending commands via SSH where necessary.
 
-# Features 
+## Features 
 - Create or delete an mtree
 - Create or delete an NFS export
 - Create or delete a VLAN interface
 - Establish mtree replication
 
 
-# Examples
 
 ## Get started
 ```
