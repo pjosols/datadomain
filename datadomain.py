@@ -6,10 +6,7 @@ import paramiko
 class DataDomain(object):
 
     def __init__(self, hostname):
-        """
 
-        :param hostname:
-        """
         self.username = str()
         self.password = str()
         self.hostname = hostname
