@@ -40,10 +40,10 @@ class DataDomain(object):
             }
         }
         login_ = self._post(self.url_auth, auth_payload)
-        token_ = login_.headers["X-DD-AUTH-TOKEN"]
-        self.headers.update({"X-DD-AUTH-TOKEN": token_})
         if login_.status_code != 201:
             return False
+        token_ = login_.headers["X-DD-AUTH-TOKEN"]
+        self.headers.update({"X-DD-AUTH-TOKEN": token_})
         return True
 
     def logout(self):
