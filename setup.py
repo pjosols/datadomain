@@ -24,7 +24,7 @@ setup(name='datadomain',
           'Programming Language :: Python :: 3.6',
           'Topic :: System :: Archiving :: Backup',
       ],
-      keywords='flask django pymongo mongodb',
+      keywords='dell emc datadomain backup',
       include_package_data=True,
       zip_safe=False
       )
