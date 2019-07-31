@@ -47,7 +47,7 @@ class DataDomain(object):
         return True
 
     def logout(self):
-        logout_ = requests.delete(self.url_auth, verify=self.verify, headers=self.headers)
+        logout_ = self._delete(self.url_auth)
         if logout_.status_code != 200:
             return False
         return True
