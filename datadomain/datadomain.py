@@ -67,7 +67,7 @@ class DataDomain(object):
             return False
         return ssh
 
-    def _get_next_vlan_id(self, vlan_id):
+    def _get_next_vlan_id(self, physical_int):
         """
         Helper method to return the next available network ID.  According to the docs, "The virtual interface name must
         be kept at a minimum. If possible, use a number in the range of 0 to 99. However, the maximum value is 9999."
@@ -77,7 +77,7 @@ class DataDomain(object):
         if network_.status_code != 200:
             return False
         data = json.loads(network_.content)
-        list_of_ids = [network["id"] for network in data["network"] if "{}.".format(vlan_id) in network["id"]]
+        list_of_ids = [network["id"] for network in data["network"] if "{}.".format(physical_int) in network["id"]]
         for i in range(10, 9999):
             if i not in list_of_ids:
                 return i
