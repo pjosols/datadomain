@@ -77,7 +77,7 @@ class DataDomain(object):
         if network_.status_code != 200:
             return False
         data = json.loads(network_.content)
-        list_of_ids = [network["id"] for network in data["network"] if "{}.".format(physical_int) in network["id"]]
+        list_of_ids = [network["id"].split(".")[1] for network in data["network"] if "{}.".format(physical_int) in network["id"]]
         for i in range(10, 9999):
             if i not in list_of_ids:
                 return i
