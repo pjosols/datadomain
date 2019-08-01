@@ -3,7 +3,7 @@
 datadomain.py
 =============
 
-A Python module for interacting with the DataDomain backup appliance. It
+A Python package for interacting with the DataDomain backup appliance. It
 uses the DataDomain REST API where possible and reverts to sending
 commands via SSH where necessary.
 
