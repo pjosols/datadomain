@@ -6,7 +6,7 @@ def readme():
         return f.read()
 
 setup(name='datadomain',
-      version='0.1.0',
+      version='0.1.1',
       description='Module for interacting with DataDomain backup appliance',
       long_description=readme(),
       url='https://github.com/pauljolsen/datadomain',
