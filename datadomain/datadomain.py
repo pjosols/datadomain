@@ -67,35 +67,15 @@ class DataDomain(object):
             return False
         return ssh
 
-    def _get_next_vlan_id(self, physical_int):
-        """
-        Helper method to return the next available network ID.  According to the docs, "The virtual interface name must
-        be kept at a minimum. If possible, use a number in the range of 0 to 99. However, the maximum value is 9999."
-        :return:
-        """
-        network_ = self._get(self.url_network)
-        if network_.status_code != 200:
-            return False
-        data = json.loads(network_.content)
-        list_of_ids = [network["id"] for network in data["network"] if "{}.".format(physical_int) in network["id"]]
-        for i in range(10, 9999):
-            if i not in list_of_ids:
-                return i
-        return None
-
-    def create_interface(self, ip_address, netmask, vlan_id=None, physical_int="veth2"):
+    def create_interface(self, ip_address, netmask, vlan_id, physical_int="veth2"):
         """
         Here we use SSH because the DataDomain API v1.0 doesn't support creating a VLAN.
         :param ip_address:
         :param netmask:
-        :param vlan_id: You can specify the vlan_id but there's no guarantee it's available. If you don't specify it
-        (recommended), the next available ID will be used.  None by default.
+        :param vlan_id:
         :param physical_int:  Specify the physical interface on which to create the VLAN interface. "veth2" by default.
         :return:
         """
-        # Get next VLAN id if not provided
-        vlan_id = vlan_id or self._get_next_vlan_id(physical_int)
-
         # Connect to DataDomain via ssh
         ssh = self._ssh_connect(self.hostname)
         if not ssh:

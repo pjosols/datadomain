@@ -58,7 +58,7 @@ Work with VLAN interfaces
 ::
 
    # Create VLAN Interface
-   dd.create_interface("10.0.1.125", "255.255.255.0", physical_int="veth2")
+   dd.create_interface("10.0.1.125", "255.255.255.0", vlan_id=101, physical_int="veth2")
 
    # Get All VLAN Interfaces
    dd.get_interface()
