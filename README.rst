@@ -30,7 +30,7 @@ Get started
    dd = DataDomain("nycdd01.mydomain.com")
 
    # Login
-   dd.login("corp\\pauljolsen", password)
+   dd.login("mydomain\\pauljolsen", password)
 
    # Logout
    dd.logout()
@@ -58,7 +58,7 @@ Work with VLAN interfaces
 ::
 
    # Create VLAN Interface
-   dd.create_interface("10.0.1.125", "255.255.255.0", vlan_id=101, physical_int="veth2")
+   dd.create_interface("10.0.1.125", "255.255.255.0", vlan_id=10, physical_int="veth2")
 
    # Get All VLAN Interfaces
    dd.get_interface()
@@ -101,4 +101,4 @@ work on the destination.
 
 ::
 
-   dd.replicate_mtree(mtree="pjo-test-26", destination="londd01.mydomain.com")
+   dd.replicate_mtree(mtree="pjo-test-22", destination="londd01.mydomain.com")
