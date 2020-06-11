@@ -1,1 +1,1 @@
-from datadomain import DataDomain
+from datadomain.datadomain import DataDomain
